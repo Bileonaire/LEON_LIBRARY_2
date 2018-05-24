@@ -152,7 +152,7 @@ def delete_user():
     """
 
 
-# Meals
+# Booka
 @app.route('/api/v2/books', methods=["POST"])
 def create_book():
     """ endpoint for creating a meal item.
@@ -327,8 +327,6 @@ def delete_borrowed():
         required: true
     """
 
-
-# History
 @app.route("/api/v2/bookhistory/<int:book_id>", methods=["GET"])
 def get_book_history():
     """endpoint for getting a particular book's history.
@@ -374,9 +372,9 @@ def get_all_history():
 @app.route('/')
 def hello_world():
     "test that flask app is running"
-    return "To view the docs visit: https://leonlibrary.herokuapp.com/apidocs"
+    return "To view the docs visit: https://leon-library-2.herokuapp.com/apidocs"
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run('0.0.0.0', port=port)
+  port = int(os.environ.get('PORT', 5000))
+  app.run('0.0.0.0', port=port)
