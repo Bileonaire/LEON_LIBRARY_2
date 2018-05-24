@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/Bileonaire/LEON_LIBRARY_2.svg?branch=Feature-API)](https://travis-ci.org/Bileonaire/LEON_LIBRARY_2)
 [![Coverage Status](https://coveralls.io/repos/github/Bileonaire/LEON_LIBRARY_2/badge.svg?branch=Feature-API)](https://coveralls.io/github/Bileonaire/LEON_LIBRARY_2?branch=Feature-API)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # library
 
@@ -85,6 +86,10 @@ POST   /api/v1/borrowed | Create new borrowed book
 GET   /api/v1/borrowed | Get all borrowed books
 DELETE   /api/v1/borrowed/id | Delete a single borrowed book
 GET   /api/v1/borrowed/id | Get a single borrowed book
+GET   /api/v1/history | Get all history
+GET   /api/v1/bookhistory/id | Delete a book history
+GET   /api/v1/userhistory/id | Get a single user history
+
 
 ## Running the tests
 
