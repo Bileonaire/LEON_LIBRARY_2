@@ -4,7 +4,7 @@
 
 # library
 
-library is an application that allows users to borrow books and helps the librarian know what books want to be borrowed and those already borrowed.
+Leon Library is an application that allows users to borrow books and helps the librarian know what books want to be borrowed and those already borrowed.
 
 ![Home Image](https://raw.github.com/Bileonaire/LEON_LIBRARY_2/Feature-API/library.jpg)
 
