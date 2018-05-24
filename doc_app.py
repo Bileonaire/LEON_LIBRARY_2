@@ -327,7 +327,8 @@ def delete_borrowed():
         required: true
     """
 
-#History
+
+# History
 @app.route("/api/v2/bookhistory/<int:book_id>", methods=["GET"])
 def get_book_history():
     """endpoint for getting a particular book's history.
