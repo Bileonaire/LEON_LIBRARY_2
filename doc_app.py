@@ -327,6 +327,49 @@ def delete_borrowed():
         required: true
     """
 
+#History
+@app.route("/api/v2/bookhistory/<int:book_id>", methods=["GET"])
+def get_book_history():
+    """endpoint for getting a particular book's history.
+    ---
+    parameters:
+      - name: x-access-token
+        in: header
+        type: string
+        required: true
+      - name: book_id
+        in: path
+        type: integer
+        required: true
+    """
+
+@app.route("/api/v2/userhistory/<int:user_id>", methods=["GET"])
+def get_user_history():
+    """endpoint for getting a particular user's history.
+    ---
+    parameters:
+      - name: x-access-token
+        in: header
+        type: string
+        required: true
+      - name: user_id
+        in: path
+        type: integer
+        required: true
+    """
+
+@app.route("/api/v2/history", methods=["GET"])
+def get_all_history():
+    """endpoint for getting all history.
+    ---
+    parameters:
+      - name: x-access-token
+        in: header
+        type: string
+        required: true
+    """
+
+
 @app.route('/')
 def hello_world():
     "test that flask app is running"
