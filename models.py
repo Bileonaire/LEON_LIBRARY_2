@@ -27,7 +27,7 @@ class User(db.Model):
 
 
     @classmethod
-    def create_user(cls, username, email, password, admin=False):
+    def create_user(cls, username, email, password, admin):
         """Creates a new user and ensures that the email is unique"""
 
         by_email = cls.query.filter_by(email=email).first()

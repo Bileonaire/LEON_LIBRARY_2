@@ -54,7 +54,8 @@ class Register(Resource):
             if len(kwargs.get('password')) >= 8:
                 result = models.User.create_user(username=kwargs.get('username'),
                                                   email=kwargs.get('email'),
-                                                  password=kwargs.get('password'))
+                                                  password=kwargs.get('password'),
+                                                  admin=False)
                 return result
             return make_response(jsonify({"message" : "password should be atleast 8 characters"}), 400)
         return make_response(jsonify({"message" : "password and cofirm password should be identical"}), 400)
