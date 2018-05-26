@@ -118,13 +118,6 @@ class BorrowedList(Resource):
             type=inputs.regex(r"(.*\S.*)"),
             help='kindly provide a book to borrow',
             location=['form', 'json'])
-        self.reqparse.add_argument(
-            'returned',
-            required=False,
-            nullable=True,
-            default=False,
-            type=bool,
-            location=['form', 'json'])
         super().__init__()
     
     @token_required

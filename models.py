@@ -308,13 +308,14 @@ class Borrowed(db.Model):
             return make_response(jsonify({"message" : "borrowed book does not exists"}), 404)
 
         in_books = Book.query.filter_by(id=book.book.id).first()
-        
+        history = History.query.filter_by(borrowed_id=borrowed_id).first()
+
+        history.datetimereturned = datetime.datetime.utcnow()
+        history.returned = True
         in_books.copies += 1
         book.returned = True
-        History.update_returned(borrowed_id)
         db.session.commit()
-        return make_response(jsonify({
-            "message" : "borrowed book has been successfully returned"}), 200)
+        return make_response(jsonify({"message" : "borrowed book has been successfully returned"}), 200)
 
     @staticmethod
     def get_borrowed(borrowed_id):
@@ -431,15 +432,3 @@ class History(db.Model):
                     return make_response(jsonify({in_users.username : user_history}), 200)
             return make_response(jsonify({in_users.username : user_history}), 200)
         return make_response(jsonify({"message" : "No record of that user exists"}), 404)
-
-    @staticmethod
-    def update_returned(borrowed_id):
-        """returns book and adds timestamp to it"""
-        history = History.query.filter_by(borrowed_id=borrowed_id).first()
-
-        history.datetimereturned = datetime.datetime.utcnow()
-        history.returned = True
-        db.session.commit()
-
-        return history
-    
