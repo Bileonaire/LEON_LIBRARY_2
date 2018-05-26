@@ -26,6 +26,7 @@ class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = getenv('DEVELOPMENT_DATABASE_URI')
 
+
 class ProductionConfig(Config):
     """Contains additional config variables required during production"""
     DEBUG = False

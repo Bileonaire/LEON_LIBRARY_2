@@ -24,7 +24,7 @@ def create_app(configuration):
 
     return app
 
-app = create_app('config.DevelopmentConfig')
+app = create_app('config.ProductionConfig')
 
 
 @app.route('/')
