@@ -422,7 +422,7 @@ class History(db.Model):
         user_history = []
 
         if in_users != None and history != None:
-            if history is None:
+            if history != None:
                 for record in history:
                     info = {record.id : {"book_id" : record.book_id, "book" : record.book,
                         "user id" : record.user_id,  "datetime borrowed" : record.datetimeborrowed, "datetime returned" : record.datetimereturned,
