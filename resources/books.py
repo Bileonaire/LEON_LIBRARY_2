@@ -134,7 +134,7 @@ class BorrowedList(Resource):
                                             borrowed_book=Borrowed_book)
         return result
 
-
+    @admin_required
     def get(self):
         """Gets all borrowed books"""
         borrowed_books = models.Borrowed.get_all_borrowed()
